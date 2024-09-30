@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome for stunning icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+        .confirmation-container {
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .confirmation-icon {
+            font-size: 80px;
+            color: #28a745;
+        }
+        .order-title {
+            margin: 20px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .order-details {
+            font-size: 16px;
+        }
+        .btn-home {
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container confirmation-container text-center">
+        <!-- Stunning Success Icon -->
+        <i class="fas fa-check-circle confirmation-icon"></i>
+
+        <!-- Order Confirmation Title -->
+        <h2 class="order-title">Your Order is Placed!</h2>
+
+        <!-- Short Order Details -->
+        <p class="order-details">
+            Thank you for shopping with us! Your order has been successfully placed.<br>
+            You will not receive an email confirmation shortly.
+        </p>
+
+        <!-- Some Details or Order ID (You can add dynamic data here) -->
+        <p class="order-details">
+            <strong>Order ID:</strong> 431087 <br>
+            <strong>Total Amount:</strong> {{total_price }}
+        </p>
+
+        <!-- Home Button -->
+        <a href="/" class="btn btn-home btn-lg">
+            <i class="fas fa-home"></i> Back to Home
+        </a>
+    </div>
+
+    <!-- Bootstrap JS & Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

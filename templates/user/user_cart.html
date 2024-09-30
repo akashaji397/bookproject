@@ -1,0 +1,58 @@
+{% extends 'user/userbase.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Your Shopping Cart</h2>
+
+    {% if not cart_items %}
+        <div class="alert alert-warning text-center" role="alert">
+            <p>Your cart is empty</p>
+        </div>
+    {% else %}
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Sl. No</th>
+                    <th scope="col">Book Name</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart_items %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ item.book.title }}</td>
+                    <td>{{ item.book.author }}</td>
+                    <td>${{ item.book.price }}</td>
+                    <td>
+                        <a href="{% url 'remove_cart' item.id %}" class="btn btn-danger btn-sm">Remove</a>
+                        <div class="d-inline-flex align-items-center ml-2">
+                            <a class="btn btn-outline-secondary btn-sm" href="{% url 'decrease_quantity' item.id %}">-</a>
+                            <input type="number" name="quantity" value="{{ item.quantity }}" class="form-control mx-1" style="width: 60px;" readonly>
+                            <a class="btn btn-outline-secondary btn-sm" href="{% url 'increase_quantity' item.id %}">+</a>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</div>
+
+<form action="{% url 'create_checkout_session' %}" method="post">
+    {% csrf_token %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Total Product: {{total_title}}</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Total price: {{total_price }}</h6>
+            <button id="checkout-button" class="card-link btn btn-primary">check out</button>
+        </div>
+    
+    </div>
+</form>
+
+
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'user/userbase.html' %}
+{% load static %}
+{% block content %}
+
+        <div class="card" style="width: 14rem;">
+            <img class="card-img-top" src="{{ book.image.url }}"  alt="Card image cap">
+            <div class="card-body">
+                <h3 class="card-text">Title: {{ book.title }} </h3>
+                <p class="card-text">Author: {{ book.author }}</p>
+              <p class="card-text">Price: ${{ book.price }}</p>
+            </div>
+          </div>
+{% endblock %}

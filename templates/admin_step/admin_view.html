@@ -1,0 +1,32 @@
+<!-- ######################################### -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="bg-light text-center">
+    <div class="container">
+        <h1 class="mt-5">Welcome to the Admin View, {{ user_name }}!</h1>
+        
+        <a href="{% url 'logout' %}" class="btn btn-danger mt-3">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+        <br>
+        <a href="{% url 'listBook' %}" class="btn btn-primary btn-lg mt-4">
+            <i class="fas fa-play"></i> Get Started
+        </a>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (optional for this example) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

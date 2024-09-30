@@ -1,0 +1,16 @@
+{% extends 'admin_step/base.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+    <h1>Update Books Here..</h1>
+    <div class="c p-5">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Update Book</button>
+        </form>
+        
+    </div>
+</body>
+{% endblock %}
